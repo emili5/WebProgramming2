@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head id="myHead">
+	<meta charset="utf-8">
+	<title>document객체의 프로퍼티 사용하기</title>
+</head>
+<body style="color: blue; direction: rtl;" onload="printProperties()">
+	<h3>document의 주요 프로퍼티</h3>
+	<hr>
+	<a href="http://www.naver.com">네이버로 이동</a>
+	<div>이곳은 div영역</div>
+	<input id="input" type="text" value="여기 포커스가 있습니다">
+	<script>
+		function printProperties(){
+			document.getElementById("input").focus();//input에 포커스 넣기
+			var text;
+			text +=document.location+"\n"
+			text +=document.URL+"\n"
+			text +=document.title+"\n"
+			text +=document.head.id+"\n"
+			text +=document.body.style.color+"\n"
+			text +=document.domain+"\n"
+			text +=document.lastModified+"\n"
+			text +=document.referrer+"\n"
+			alert(text);
+		}
+	</script>
+
+</body>
+</html>

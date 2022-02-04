@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>캔버스 그리기 맛보기</title>
+</head>
+<body>
+	<h3>캔버스 그리기 맛보기</h3>
+	<hr>
+	<canvas id="canvas" width="250" height="150" style="background-color: skyblue;">
+	</canvas>
+	<script>
+		var canvas=document.getElementById("canvas");
+		var context=canvas.getContext("2d"); //2차원 그래픽 기능
+		context.beginPath();
+		context.strokeStyle="violet";
+		context.rect(50,50,70,70);
+		context.stroke(); //사각형 그리기
+
+		context.beginPath();
+		context.fillStyle="green";
+		context.rect(100,100,20,20);
+		context.fill();
+
+		context.font="20px Gothic";
+		context.fillStyle="red";
+		context.fillText("사각형을 그려보아요",50,20);
+	</script>
+</body>
+</html>

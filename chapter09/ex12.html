@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>이벤트 객체 전달받기</title>
+</head>
+<body>
+	<p id="p">마우스를 올려보세용</p>
+	<button onclick="f(event)">클릭하세요</button>
+	<script>
+		function f(e){
+			alert(e.type);
+		}
+		document.getElementById("p").onmouseover=f; //onmouseover이벤트 리스너를 p태그에 등록
+	</script>
+</body>
+</html>

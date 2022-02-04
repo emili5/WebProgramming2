@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>반복 위치 서비스</title>
+</head>
+<body>
+	<h3>반복 위치 서비스</h3>
+	<hr>
+	<div id="info">이 위치에 반복 위치 서비스 정보 위치</div>
+	<script>
+		if(!navigator.geolocation)
+			alert("위치 서비스 지원x");
+		else
+			watchID=navigator.geolocation.watchPosition(changed);
+		var count=0;
+		var img=new Image();
+		var watchID;
+		function changed(position){
+			if(count==5){
+				navigator.geolocation.clearWatch(watchID);
+				document.getElementById("info").innerHTML="위치 서비스 종료";
+				return;
+			}
+			var lat=position.coords.latitude;
+			var lon=position.coords.longitude;
+			var text=count+"번째 변경: 경도는"+lat+","+"<br>"+"위도는"+lon;
+			document.getElementById("info").innerHTML=text;
+			count++;
+		}
+	</script>
+</body>
+</html>

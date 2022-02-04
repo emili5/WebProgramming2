@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>new Object()로 사용자 객체 만들기</title>
+	<script>
+		function deposit(money){
+			this.balance+=money;
+			return this.balance;
+		}
+		function withdraw(money) {
+			this.balance-=money;
+			return this.balance;
+		}
+		var IDcard=new Object();
+		IDcard.name="안정민";
+		IDcard.number="1234567";
+		IDcard.valid="20211105"
+		IDcard.balance=50000;
+		IDcard.deposit=deposit;
+		IDcard.withdraw=withdraw;
+	</script>
+</head>
+<body>
+	<h3>new Object로 사용자 객체 만들기</h3>
+	<hr>
+	<script>
+		document.write("이름:"+IDcard.name+"<br>");
+		document.write("학번:"+IDcard.number+"<br>");
+		document.write("잔액:"+IDcard.balance+"<br>");
+		document.write("10000원 저금 후 잔액:"+IDcard.deposit(10000)+"<br>");
+		document.write("20000원 인출 후 잔액:"+IDcard.withdraw(20000)+"<br>");
+	</script>
+</body>
+</html>

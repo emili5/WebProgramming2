@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HTML DOM트리</title>
+</head>
+<body>
+	<h3>DOM 객체 p의 프로퍼티,스타일, 이벤트리스너</h3>
+	<hr>
+	<p id="firstP"
+		style="color:lemonchiffon;"
+		onclick="this.style.color='teal'"
+		>이걸 클릭하면 글자색이 바뀝니당
+	</p>
+	<script>
+		var p=document.getElementById("firstP");
+		var text="p.id="+p.id+"\n";
+		text+="p.tagName="+p.tagName+"\n";
+		alert(text);
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>addeventListener()를 이용하여 리스너 등록</title>
+	<script>
+		var p;
+		function init(){
+			p=document.getElementById("p");
+			p.addEventListener("mouseover",over);
+			p.addEventListener("mouseout",out);
+		}
+		function over(){
+				p.style.color='yellow';
+		}
+		function out(){
+				p.style.color='pink';
+		}
+	</script>
+</head>
+<body onload="init()">
+	<h3>addeventListener()를 이용하여 리스너 등록</h3>
+	<p id="p">마우스를 올리면 yellow색으로 변경</p>
+</body>
+</html>

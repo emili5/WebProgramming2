@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Array객체로 배열 만들기</title>
+</head>
+<body>
+	<h3>Array객체로 배열 만들어보자</h3>
+	<hr>
+	<script>
+		var wants= new Array();//배열의 크기 지정없이 배열 객체 생성
+		wants[0]=7;
+		wants[1]=24;
+		wants[2]=45;
+		wants[3]=98;
+		var sum=0;
+		for(i=0;i<wants.length;i++){
+			sum+=wants[i];
+		}
+		document.write("모든 원소의 합은"+sum+"<br>");
+		wants.length=8;
+		document.write("배열의 크기를 8로 변경 후:"+wants.length);
+	</script>
+</body>
+</html>

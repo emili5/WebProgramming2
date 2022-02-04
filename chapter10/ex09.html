@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>스크린 장치에 관한 정보 출력</title>
+<script>
+		function printScreen(){
+			var text=screen.availHeight+"<br>";
+			text +=screen.availWidth+"<br>";
+			text+=screen.piwelDepth+"<br>";
+			var info=document.getElementById("info");
+			info.innerHTML=text;
+		}
+	</script>
+</head>
+<body onload="printScreen()">
+	<h3>스크린 장치에 관한 정보 출력</h3>
+	아래에 이 스크린장치에 관한 정보를 출력합니다.
+	<hr>
+	<div id="info"></div>
+</body>
+</html>
+</html>

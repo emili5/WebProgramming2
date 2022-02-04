@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>[]로 배열 만들기</title>
+</head>
+<body>
+	<h3>[]로 배열 만들어 보자</h3>
+	<hr>
+	<script>
+		var plots=[10,20,30,40,50];
+		document.write("처음: [10,20,30,40,50] <br>");
+		plots[2]=60;//값 변경
+		document.write("인덱스 2번 원소 값 변경 후:");
+		for(i=0; i<5; i++){
+			document.write(plots[i]+" ");
+		}
+		document.write("<br>");
+		document.write("인덱스 5번을 추가하여 길이를 늘린 후:");
+		plots[5]=60;//배열크기 늘리기
+		for(i=0; i<6;i++){
+			document.write(plots[i]+" ");
+		}
+		document.write("<br>");
+		document.write("인덱스 10번을 추가하여 사이값을 undefined로 만든 후:");
+		plots[10]=100;//그 사이값 undefined로 만들기
+		for(i=0;i<11;i++){
+			document.write(plots[i]+" ");
+		}
+	</script>
+</body>
+</html>

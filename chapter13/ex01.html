@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>자바스크립트 코드로 오디어 제어</title>
+	
+</head>
+<body>
+	<h3>자바스크립트 코드로 오디오 제어</h3>
+	<hr>
+	<audio id="audio" src="media/Unavailable.mp3"></audio>
+	<div id="msg"></div>
+	<button id="play" onclick="control(event)">play</button>
+	<button id="pause" onclick="control(event)">pause</button>
+	<button id="replay" onclick="control(event)">replay</button>
+	<button id="vol+" onclick="control(event)">vol+</button>
+	<button id="vol-" onclick="control(event)">vol-</button>
+	<button id="mute" onclick="control(event)">mute on/off</button>
+	<script>
+		var audio=document.getElementById("audio");
+		var div=document.getElementById("msg");
+		function control(e){
+			var id=e.target.id;
+			if(id=="play"){
+				audio.play();
+				div.innerHTML="재생중";
+			}
+			else if(id=="pause"){
+				audio.pause();
+				div.innerHTML="재생 멈춤";
+			}
+			else if(id=="replay"){
+				audio.load();
+				audio.play();
+				div.innerHTML="처음부터 다시 재생";
+			}
+			else if(id=="vol+"){
+				audio.volume+=0.1;
+				if(audio.volume>0.9) audio.volume=1.0;
+				div.innerHTML="소리 0.1증가";
+			}
+			else if(id=="vol-"){
+				audio.volume-=0.1;
+				if(audio.volume<0.1) audio.volume=0;
+				div.innerHTML="소리 0.1 감소";
+			}
+			else if(id=="mute")
+				if(!audio.muted){
+					audio.muted=true;
+					div.innerHTML="음소거 실행";
+				}
+				else{
+					audio.muted=false;
+					div.innerHTML="음소거 해제";
+				}
+		}
+	</script>
+</body>
+</html>

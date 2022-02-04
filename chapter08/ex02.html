@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSS스타일 동적 변경</title>
+	<script>
+		function change(){
+			var span=document.getElementById("mySpan");
+			span.style.color="grey";
+			span.style.fontsize="30px";
+			span.style.width="20px"
+			span.style.border="20px";
+		}
+	</script>
+</head>
+<body>
+	<p id="mySpan" style="color: blue;" >
+		후후
+	</p>
+	<input type="button" value="클릭하면 어떻게 바뀔까??"onclick="change()">
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>마우스 드래깅으로 캔버스에 그림 그리기</title>
+</head>
+<body onload="init()"> 
+	<h3>마우스 드래깅으로 캔버스에 그림 그리기</h3>
+	<hr>
+	<canvas id="canvas" width="500" height="400" style="background-color:beige;"></canvas>
+	<script>
+		var canvas,context;
+		function init(){
+			canvas=document.getElementById("canvas");
+			context=canvas.getContext("2d");
+			context.strokeStyle="pink";
+		canvas.addEventListener("mousemove",function (e){move(e)},false);
+		canvas.addEventListener("mousedown",function (e){down(e)},false);
+		canvas.addEventListener("mouseup",function (e){up(e)},false);
+		canvas.addEventListener("mouseout",function (e){out(e)},false);
+		}	
+		var startX=0, startY=0;
+		var dragging=false;
+		function draw(x,y){
+			context.beginPath();
+			context.moveTo(startX,startY);
+			context.lineTo(x,y);
+			context.stroke();
+		}
+		function down(e){
+			startX=e.offsetX; startY=e.offsetY;
+			dragging=true;
+		}
+		function up(e){
+			dragging=false;
+		}
+		function move(e){
+			if(!dragging) return;
+			var x=e.offsetX,y=e.offsetY;
+			draw(x,y);
+			startX=x; startY=y;
+		}
+		function out(e){
+			dragging=false;
+		}
+	</script>
+</body>
+</html>

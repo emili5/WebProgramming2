@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>document.getElementsByTagName()</title>
+	<script>
+		function change(){
+			var spanArray=document.getElementsByTagName("span");
+			for(var i=0; i<spanArray.length;i++){
+				var span=spanArray[i];
+				span.style.color="orchid";
+				span.style.fontSize="20px";
+			}
+		}
+	</script>
+</head>
+<body>
+	<h3>오늘의 점심
+		<button onclick="change()">누르세요</button>
+	</h3>
+	<hr>
+	저는 점심으로 건강에 좋은 <span>현미밥</span>을 먹었습니다.국은 어머니가 생일이라고 끓여주신 <span>미역국</span>을 먹었고요. 반찬은 양념이 잘 베어있는 
+	<span>돼지고기 갈비</span>를 맛있게 먹었습니다.
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>브라우저 정보 출력</title>
+	<script>
+		function printNavigator(){
+			var text=navigator.appCodeName+"<br>";
+			text +=navigator.appName+"<br>";
+			text+=navigator.appVersion+"<br>";
+			var info=document.getElementById("info");
+			info.innerHTML=text;
+		}
+	</script>
+</head>
+<body onload="printNavigator()">
+	<h3>브라우저에 관한 정보 출력</h3>
+	아래에 이 브라우저에 관한 정보를 출력합니다.
+	<hr>
+	<div id="info"></div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>프로토타입으로 객체 만들기</title>
+	<script>
+		function IDcard(name,number,valid,balance){
+			this.name=name;
+			this.number=number;
+			this.valid=valid;
+			this.balance=balance;
+			this.deposit=function (money) {
+				this.balance+=money;
+				return this.balance;
+			}
+			this.withdraw=function (money){
+				this.balance-=balance;
+				return this.balance;
+			}
+		}
+	</script>
+</head>
+<body>
+	<h3>프로토타입으로 객체 만들기</h3>
+	<hr>
+	<script>
+		var A=new IDcard("안정민","1234567","20211105",50000);
+		document.write("이름:"+A.name+"<br>");
+		document.write("학번:"+A.number+"<br>");
+		document.write("잔액:"+A.balance+"<br>");
+		document.write("10000원 저금 후 잔액:"+A.deposit(10000)+"<br>");
+		document.write("20000원 인출 후 잔액:"+A.withdraw(20000)+"<br>");
+	</script>
+</body>
+</html>

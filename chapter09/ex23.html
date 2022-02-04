@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>선택된 라디오 버튼 알아내기!</title>
+	<script>
+		function findChecked(){
+			var found=null;
+			var city=document.getElementsByName("city");//같은 name속성 태그 배열로 저장
+			for( var i=0; i<city.length; i++){
+				if(city[i].checked == true)
+					found=city[i];
+			}
+			if(found != null)
+				alert(found.value+"이 선택되었습니다!");
+			else
+				alert("선택해주세요!");
+		}
+	</script>
+</head>
+<body>
+	<h3>선택된 라디오 버튼 알아내기!</h3>
+	<hr>
+	<form>
+		버튼을 클릭하면 선택된 라디오 버튼의 value를 출력합니다!<br>
+		<input type="radio" name="city" value="seoul">서울
+		<input type="radio" name="city" value="bejing">북경
+		<input type="radio" name="city" value="tokyo">동경
+		<input type="button" value="find checked" onclick="findChecked()">
+	</form>
+</body>
+</html>

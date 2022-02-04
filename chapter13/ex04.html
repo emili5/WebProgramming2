@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>현재 위치 파악</title>
+</head>
+<body>
+	<h3>현재 위치 파악</h3>
+	<hr>
+	<div id="info">이 위치에 현재 위치 정보 알려줌</div><br>
+	<div id="map">이 위치에 구글 지도</div>
+	<script>
+		if(!navigator.geolocation)
+			alert("위치 확인 지원 안됨");
+		else
+			navigator.geolocation.getCurrentPosition(found);
+		function found(position){
+			var now=new Date(position.timestamp);
+			var lat=position.coords.latitude;
+			var lon=position.coords.longitude;
+			var acc=position.coords.accuracy;
+			var text="현재 시간"+now.toUTCString()+"<br>";
+			text+="현재 위치 경도"+lat+"<br>";
+			text+="현재 위치 위도"+lon+"<br>";
+			text+="정확도"+acc;
+			document.getElementById("info").innerHTML=text;
+			var img=new Image();
+			img.src="https://maps.googleapis.com/maps/api/staticmap?center=";
+			document.getElementById("map").appendChild(img);
+		}
+	</script>
+</body>
+</html>

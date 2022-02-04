@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Array객체 메소드 활용</title>
+	<script>
+		function pr(msg,arr){
+			document.write(msg+arr.toString()+"<br>");
+		}
+	</script>
+</head>
+<body>
+	<h3>Array 객체 메소드 활용하기</h3>
+	<hr>
+	<script>
+		var a=new Array("무","야","호");
+		var b=new Array("!");
+		var c=new Array();
+		pr("배열 a=",a);
+		pr("배열 b=",b);
+		document.write("<br>");
+		c=a.concat(b);//a와 b를 합친 배열 c생성
+		pr("concat후 배열 c=",c);
+		pr("concat후 배열 a=",a);
+		c=a.join(".");
+		pr("join후 배열 c=",c);
+		pr("join후 배열 a=",a);
+		c=a.reverse();
+		pr("reverse후 배열 c=",c);
+		pr("reverse후 배열 a=",a);
+		c=a.slice(0,2);
+		pr("slice후 배열 c=",c);
+		pr("sclice후 배열 a=",a);
+		c=a.sort();
+		pr("sort후 배열 c=",c);
+		pr("sort후 배열 a=",a);
+		c=a.toString();
+		document.write("toString후 c="+c);
+	</script>
+</body>
+</html>
